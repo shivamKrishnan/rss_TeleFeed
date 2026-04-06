@@ -1,8 +1,8 @@
 import os
 
 # Environment variables
-BOT_TOKEN = "8786226356:AAGn5ArKeF6IZRHQf_wTcLzWnU_e4W-Qw98"
-CHAT_ID = "6801239011"
+BOT_TOKEN = ""
+CHAT_ID = ""
 
 # Database
 DB_NAME = "rss_bot.db"
