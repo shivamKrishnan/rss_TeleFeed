@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Manager</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.fonts.css">
+</head>
+<body>
+    <main class="container" style="margin-top: 5rem;">
+        <h1>Feed Monitor</h1>
+        
+        <form method="POST" class="row">
+            <fieldset class="column column-80">
+                <input type="url" name="rss_feed" placeholder="https://example.com/feed.xml" required>
+            </fieldset>
+            <fieldset class="column">
+                <button type="submit" class="button-primary">Add</button>
+            </fieldset>
+        </form>
+
+        <div style="margin-bottom: 2rem;">
+            <a href="{{ url_for('check_feeds') }}" class="button button-outline">Manual Sync Now</a>
+        </div>
+
+        <h3>Active Subscriptions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feed in feeds %}
+                <tr>
+                    <td><code>{{ feed }}</code></td>
+                    <td><a href="{{ url_for('remove_feed', index=loop.index0) }}" style="color: #d33;">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
