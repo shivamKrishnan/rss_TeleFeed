@@ -1,6 +1,3 @@
-Here you go—clean, copy-ready `README.md` Markdown:
-
-````markdown
 # RSS-to-Telegram Bot
 
 A Python-based bot that fetches updates from RSS feeds and sends them as alerts to a Telegram chat. Built with Flask and SQLite for simplicity and reliability.
