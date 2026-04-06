@@ -103,18 +103,6 @@ http://127.0.0.1:5000
 * **Remove a Feed**: Click the "Remove" button next to the feed you want to remove.
 * **Check for New Posts**: Click the "Check for New Posts" button to manually trigger a check.
 
-### Scheduler
-
-The bot automatically checks for new posts every hour.
-
-To change the interval, modify:
-
-```python
-schedule.every(1).hour.do(check_feeds)
-```
-
-in `app.py`.
-
 ---
 
 ## 🗃 Database
